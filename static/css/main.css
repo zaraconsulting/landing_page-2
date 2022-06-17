@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+/* global styles - begin */
+*, ::before, ::after {
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+body {
+    margin: 0;
+}
+
+h3 {
+    cursor: default;
+}
+
+.flex {
+    display: flex;
+}
+
+.container {
+    width: 100%;
+}
+
+main {
+    margin: 2.5rem 0;
+    /* height: calc(100% - 115px); */
+    height: calc(100vh - 480px - 2.5rem)
+}
+
+.scroll-to-top-btn {
+    width: 35px;
+    height: 35px;
+    background-color: #ccc;
+    border-radius: 50%;
+    /* background-color: #e7e7e7; */
+    z-index: 10;
+    position: absolute;
+}
+
+/* .hide {
+    display: none;
+} */
+
+/* media queries - begin */
+@media (max-width: 479px) {
+    .container {
+        max-width: 479px;
+    }
+}
+
+@media (min-width: 480px) {
+    .container {
+        max-width: 480px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hide-on-small {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .show-on-small {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+
+    .hide-on-medium {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1440px;
+    }
+}
+
+
+/* media queries - end */
+
+/* global styles - end */
+
+
+/* header - begin */
+
+header nav {
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    margin: 0 auto;
+}
+
+nav {
+    position: relative;
+}
+
+nav #logo {
+    height: 100%;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* mobile menu - begin */
+#menu-btn {
+    cursor: pointer;
+    height: 2.188rem;
+    width: 2.188rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#menu-btn>span,
+#menu-btn>span::before,
+#menu-btn>span::after {
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 0.125rem;
+    background-color: #000;
+    right: 0rem;
+}
+
+#menu-btn>span::before {
+    content: '';
+    background-color: #000;
+    top: .5rem;
+    position: absolute;
+}
+
+#menu-btn>span::after {
+    content: '';
+    background-color: #000;
+    bottom: .5rem;
+    position: absolute;
+}
+
+nav #mobile-menu {
+    display: block;
+    position: absolute;
+    top: 6rem;
+    background-color: #f7f7f7;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform-left 200ms ease-in-out;
+}
+
+@media (max-width: 479px) {
+    nav #mobile-menu {
+        width: 95%;
+    }
+
+    @media (max-width: 479px) {
+        header nav {
+            justify-content: space-around;
+        }
+    }
+}
+
+nav #mobile-menu li {
+    /* padding: 1rem 0; */
+    margin: 0;
+    /* cursor: pointer; */
+}
+
+nav #mobile-menu li a {
+    padding: 1rem 0;
+    margin: 0;
+    display: block;
+    opacity: 0;
+    /* color: #000; */
+    transition: opacity 250ms ease-in-out 250ms;
+
+}
+
+nav #mobile-menu li a:hover {
+    text-decoration: underline;
+}
+
+nav #mobile-menu li:first-child {
+    border-radius: 5px 5px 0 0;
+}
+
+nav #mobile-menu li:last-child {
+    border-radius: 0 0 5px 5px;
+}
+
+nav #mobile-menu li:hover {
+    background-color: #e7e7e7;
+}
+
+#menu-btn:focus~#mobile-menu {
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+    transform: scale(1, 1);
+}
+
+#menu-btn:focus~#mobile-menu a {
+    opacity: 1;
+    transition: opacity 150ms ease-in-out;
+    /* transform: scale(1, 1); */
+}
+
+
+/* mobile menu - end */
+
+/* header - end */
+
+/* footer - begin */
+footer {
+    background-color: rgb(31, 31, 31);
+    color: #fff;
+    padding: 2.5rem 1.5rem;
+}
+
+footer .container {
+    margin: 0 auto;
+}
+
+footer .flex {
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+footer ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .columns h3 {
+    border-bottom: .1rem solid #fff;
+    /* border-color: #fff; */
+    display: inline-block;
+}
+
+footer #subfooter ul {
+    border-top: .1rem solid #fff;
+    padding: 1rem 0 0 0;
+    margin-bottom: 0;
+    justify-content: center;
+}
+
+footer #subfooter ul li {
+    margin: 0 1.5rem;
+}
+
+footer .flex {
+    padding: 1.5rem 0
+}
+
+@media (max-width: 767px) {
+    footer .columns {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    footer .columns>div {
+        padding: 1.5rem 0;
+    }
+}
+
+/* footer - end */
